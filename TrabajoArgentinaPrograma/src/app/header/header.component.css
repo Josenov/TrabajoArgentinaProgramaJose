@@ -1,7 +1,26 @@
 app-redessociales{
     margin-top: 10px;
     float: right;
-    margin-right: 100px;
+    margin-right: 50px;
     
+    
+}
+
+app-logo-arg-programa{
+    margin-top: 10px;
+}
+
+@media (max-width:650px){
+    app-logo-arg-programa{
+        margin-left: -5px;
+    }
+    app-redessociales{
+        margin-top: 20px;
+        margin-right: 20px;
+        
+        
+    }
+
+
     
 }

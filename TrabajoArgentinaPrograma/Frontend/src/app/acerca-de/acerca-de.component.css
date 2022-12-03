@@ -16,6 +16,12 @@ img{
 
 
 
+
+
+
+
+
+
 @media (min-width:650px){
     #foto-perfil{
         position: absolute;
@@ -28,11 +34,24 @@ img{
         margin-top: 20px;
         margin-left: -170px;
         text-align: center;
+        
+    }
+
+    .titulo-dev{
+        margin-top:-15px;
     }
 
     #descripcion{
+        margin-top: -10px;
         margin-left: 200px;
+        text-align: center;
       
+
+    }
+    #acercademi{
+        font-size: 34px;
+        font-weight: bolder;
+        color: #00C884;
 
     }
 
@@ -55,10 +74,21 @@ img{
         text-align: center;
     }
 
+    .titulo-dev{
+        margin-top:-15px;
+    }
+
 
     #descripcion{
         margin-left: 35px;
         text-align:center
+
+    }
+
+    #acercademi{
+        font-size: 24px;
+        font-weight: bolder;
+        color: #00C884;
 
     }
 

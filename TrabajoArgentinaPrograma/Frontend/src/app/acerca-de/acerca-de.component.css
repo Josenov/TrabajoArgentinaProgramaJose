@@ -43,15 +43,16 @@ img{
 
     #descripcion{
         margin-top: -10px;
-        margin-left: 200px;
+        margin-left: 90px;
         text-align: center;
       
 
     }
     #acercademi{
-        font-size: 34px;
+        font-size: 44px;
         font-weight: bolder;
         color: #00C884;
+        margin-left: 20px;
 
     }
 
@@ -89,6 +90,7 @@ img{
         font-size: 24px;
         font-weight: bolder;
         color: #00C884;
+        
 
     }
 

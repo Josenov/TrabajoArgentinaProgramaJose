@@ -1,0 +1,42 @@
+.row{
+    padding: 25px;
+    text-align: center;
+}
+
+h1, h3{
+    display: inline;
+}
+
+
+li{
+    list-style: none;
+}
+
+@media (min-width:650px){
+    #formacionacademica{
+        font-size: 44px;
+        font-weight: bolder;
+        color: #00C884;
+        margin-top: 30px;
+        margin-left: 35px;
+        text-align: center;
+    }
+    #lista{
+        margin-left: 260px;
+    }
+
+}
+
+
+
+@media (max-width:650px){
+    #formacionacademica{
+        font-size: 24px;
+        font-weight: bolder;
+        color: #00C884;
+        margin-top: 10px;
+        margin-left: 35px;
+        text-align: center;
+    }
+
+}

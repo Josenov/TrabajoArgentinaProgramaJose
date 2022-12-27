@@ -3,8 +3,8 @@ package com.portfolioweb.argentinaprograma.Security.Service;
 
 import com.portfolioweb.argentinaprograma.Security.Entity.Usuario;
 import com.portfolioweb.argentinaprograma.Security.Repository.InterfaceUsuarioRepository;
-import jakarta.transaction.Transactional;
 import java.util.Optional;
+import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

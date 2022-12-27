@@ -3,5 +3,6 @@
     <a href=""><img src="..//../assets/facebook.png" alt=""></a>
     <a href=""><img src="..//../assets/instagram.png" alt=""></a>
     <a href=""><img src="..//../assets/twitter.png" alt=""></a>
-    <button type="button" class="btn btn-outline-success" (click)="login()">INICIAR SESIÓN</button>
+    <button type="button" class="btn btn-outline-success" (click)="login()" *ngIf="!isLogged">INICIAR SESIÓN</button>
+    <button type="button" class="btn btn-outline-success" (click)="onLogOut()" *ngIf="isLogged">CERRAR SESIÓN</button>
 </div>

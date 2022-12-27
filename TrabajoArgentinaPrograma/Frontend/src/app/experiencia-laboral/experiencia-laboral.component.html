@@ -1,27 +1,26 @@
 <div class="row">
     <h1 id="experiencialaboral">.ExperienciaLaboral</h1>
     <br>
-    
-    <div class="col-lg-7" id="lista">
-        <ul>
-            <li>
-                <h3>Trabajo 1</h3>  
-                <h4>Año 2010</h4>
-            </li>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla ut consequuntur optio quisquam! Repellat rem ex, vero blanditiis est animi sapiente recusandae dicta repellendus? Aspernatur aliquam perferendis quisquam aliquid quam?</p>
-
-            <li>
-                <h3>Trabajo 2</h3>  
-                <h4>Año 2016</h4>
-            </li>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla ut consequuntur optio quisquam! Repellat rem ex, vero blanditiis est animi sapiente recusandae dicta repellendus? Aspernatur aliquam perferendis quisquam aliquid quam?</p>
-
-            <li>
-                <h3>Trabajo 3</h3>  
-                <h4>Año 2018</h4>
-            </li>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla ut consequuntur optio quisquam! Repellat rem ex, vero blanditiis est animi sapiente recusandae dicta repellendus? Aspernatur aliquam perferendis quisquam aliquid quam?</p>
-        </ul>
+    <br>
+    <div>
+        <button  id="button-1"   type="button" class="btn btn-primary" routerLink="/nuevaexplaboral" *ngIf="isLogged"> Agregar Nueva Experiencia Laboral</button>
     </div>
+    <div>
+        <table class="table">
+            <tbody>
+                <tr *ngFor="let ExperienciaLaboral of experienciaLaboral">
+                    <td>
+                        {{ExperienciaLaboral.nombreExpe}}
+                    </td>
+                    <td>
+                        {{ExperienciaLaboral.descripcionExpe}}
+                    </td>
+                    <td *ngIf="isLogged">
+                        <button class="btn btn-primary" routerLink="/editarexplaboral/{{ExperienciaLaboral.id}}"><i class="bi bi-pen"></i></button>
+                    </td>
+                    <td *ngIf="isLogged"><button class="btn btn-danger" (click)="borrar(ExperienciaLaboral.id)"><i class="bi bi-trash3"></i></button></td>
+                </tr>
+            </tbody>
+        </table>
 
 </div>

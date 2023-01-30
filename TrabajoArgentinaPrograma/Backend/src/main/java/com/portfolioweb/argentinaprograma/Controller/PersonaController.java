@@ -62,5 +62,10 @@ public class PersonaController {
         interfacepersonaService.savePersona(persona);
         return persona;
     }
+    
+    @GetMapping("traer/perfil")
+    public Persona findPersona(){
+        return interfacepersonaService.findPersona((long)1);
+    }
 
 }

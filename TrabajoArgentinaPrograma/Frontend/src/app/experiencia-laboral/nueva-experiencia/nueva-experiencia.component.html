@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div>
+            <form (ngSubmit)="crearExperiencia()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="nombreExp">Empresa</label>
+                    <input type="text" class="form-control" id="nombreExp" name="nombreExp" [(ngModel)]="nombreExp" required>
+                </div>
+                <div class="form-group">
+                    <label for="descripcionExp">Año y Descripcion de Trabajo</label>
+                    <input type="text" class="form-control" id="descripcionExp" name="descripcionExp" [(ngModel)]="descripcionExp" required>
+                </div>
+                <button class="btn btn-primary">
+                    Agregar Experiencia Laboral
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+ 

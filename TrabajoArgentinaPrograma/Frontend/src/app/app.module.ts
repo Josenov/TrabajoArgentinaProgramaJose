@@ -18,6 +18,8 @@ import { HttpClient, HttpClientModule} from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { interceptorProvider } from './service/interceptorService';
+import { NuevaExperienciaComponent } from './experiencia-laboral/nueva-experiencia/nueva-experiencia.component';
+import { EditarExperienciaLaboralComponent } from './experiencia-laboral/editar-experiencia-laboral/editar-experiencia-laboral.component';
 
 
 @NgModule({
@@ -35,6 +37,8 @@ import { interceptorProvider } from './service/interceptorService';
     FooterComponent,
     HomeComponent,
     LoginComponent,
+    NuevaExperienciaComponent,
+    EditarExperienciaLaboralComponent,
   ],
   imports: [
     BrowserModule,

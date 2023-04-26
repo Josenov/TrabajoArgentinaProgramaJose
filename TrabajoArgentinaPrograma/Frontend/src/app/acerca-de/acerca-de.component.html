@@ -1,16 +1,22 @@
 <div class="row">
+    <div>
+        <button  id="button-1"   type="button" class="btn btn-primary" routerLink="/editaracercade/1" *ngIf="isLogged"> Editar Nuevo Usuario</button>
+    </div>
     <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-        <img src="../../assets/fotoperfil.png" class="img-fluid" id="foto-perfil">
+        <img src={{persona.img}} class="img-fluid" id="foto-perfil">
     </div>
     <br>
-    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2" id="nombreytitulo">
+    <br>
+    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2" id="nombreyapellido">
         <p class="nombre">{{persona.nombre}} {{persona.apellido}}</p>
         <p class="titulo-dev">Full Stack Developer Jr.</p>
     </div>
     <br>
+    <br>
+    <br>
     <div class="col-xs-12 col-sm-2 col-md-6 col-lg-6" id="descripcion">
-        <span id="acercademi">.AcercaDeMi</span>
-        <br>
-        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus unde commodi temporibus ut ducimus ipsa corporis quia magnam perferendis! Non quam sequi qui dolore quo, delectus mollitia illum fuga autem.</span>
+        
+        <div id="acercademi">.AcercaDeMi</div>
+        <span>{{persona.descripcion}}</span>
     </div>
 </div>

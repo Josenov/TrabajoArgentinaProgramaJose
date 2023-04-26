@@ -1,38 +1,52 @@
 
 package com.portfolioweb.argentinaprograma.Service;
 
+
 import com.portfolioweb.argentinaprograma.Entity.Persona;
-import com.portfolioweb.argentinaprograma.Interface.InterfacePersonaService;
 import com.portfolioweb.argentinaprograma.Repository.InterfacePersonaRepository;
 import java.util.List;
+import java.util.Optional;
+import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ImpPersonaService implements InterfacePersonaService{
+@Transactional
+public class ImpPersonaService{
     
-    @Autowired InterfacePersonaRepository interfacepersonaRepository;
-
-    @Override
-    public List<Persona> getPersona() {
-        List<Persona> persona = interfacepersonaRepository.findAll(); 
-        return persona;
+    @Autowired 
+    InterfacePersonaRepository interfacepersonaRepository;
+    
+    public List <Persona> list(){
+        return interfacepersonaRepository.findAll();
+        
     }
-
-    @Override
-    public void savePersona(Persona persona) {
-        interfacepersonaRepository.save(persona); 
+    
+    public Optional <Persona> getOne(int id){
+        return interfacepersonaRepository.findById(id);
     }
-
-    @Override
-    public void deletePersona(Long id) {
-         interfacepersonaRepository.deleteById(id); 
+    
+    public Optional <Persona> getByNombre(String nombre){
+        return interfacepersonaRepository.findByNombre(nombre);
     }
-
-    @Override
-    public Persona findPersona(Long id) {
-         Persona persona=interfacepersonaRepository.findById(id).orElse(null);
-         return(persona);
+    
+    public void save(Persona persona){
+        interfacepersonaRepository.save(persona);
+        
     }
+    
+       public void delete(int id){
+        interfacepersonaRepository.deleteById(id);
+        
+    }
+       
+       public boolean existsById(int id){
+           return interfacepersonaRepository.existsById(id);
+       }
+    
+    public boolean existsByNombre(String nombre){
+           return interfacepersonaRepository.existsByNombre(nombre);
+       }
+
     
 }

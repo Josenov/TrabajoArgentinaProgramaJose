@@ -1,0 +1,20 @@
+<div class="container" *ngIf="formAcademica">
+    <div class="row">
+        <div>
+            <form (ngSubmit)="actualizarFormAcademica()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="nombreForm">Escuela/Instituto/Universidad</label>
+                    <input type="text" class="form-control" id="nombreForm" name="nombreForm" [(ngModel)]="formAcademica.nombreForm" required>
+                </div>
+                <div class="form-group">
+                    <label for="descripcionForm">Año y Descripcion de Estudios</label>
+                    <input type="text" class="form-control" id="descripcionForm" name="descripcionForm" [(ngModel)]="formAcademica.descripcionForm" required>
+                </div>
+                <button class="btn btn-primary">
+                    Editar Experiencia Laboral
+                </button>
+                <button class="btn btn-primary" onclick="history.back()">Volver al Portfolio</button>
+            </form>
+        </div>
+    </div>
+</div>

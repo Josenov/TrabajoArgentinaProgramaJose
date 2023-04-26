@@ -1,32 +1,36 @@
 .row{
     padding: 25px;
+    text-align: center;
 }
 
-.contenedor{
-    width: auto;
-}
 
-#proyecto-1,#proyecto-2,#proyecto-3{
-    display: inline-block;
-    text-align: justify;
-    
 
-}
-h2{
+
+span{
     color: #00C884;
     margin: 20px;
     
 }
 
-.img-1{
-    margin-left: 760px;
+#btn{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    margin-left: 600px;
 }
 
-.img-1,.img-2,.img-3{
-    margin: 5px;
-    padding-bottom: 5px;
-
+.img-fluid{
+    display: flex;
+    align-content:center;
+    margin-top: -90px;
 }
+
+table{
+    margin:0px;
+}
+
+
+
 
 @media (min-width:650px){
     h1{
@@ -38,6 +42,11 @@ h2{
         text-align: center;
     }
     
+    .img-fluid{
+        display: flex;
+        align-content:center;
+        flex-wrap: wrap;
+    }
 
 }
 
@@ -50,6 +59,13 @@ h2{
         margin-left: 35px;
         text-align: center;
     }
+
+    .img-fluid{
+        display: flex;
+        align-content:center;
+        
+    }
     
+
 
 }

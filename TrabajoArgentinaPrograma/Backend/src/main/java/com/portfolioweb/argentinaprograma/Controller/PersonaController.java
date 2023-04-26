@@ -1,19 +1,20 @@
 package com.portfolioweb.argentinaprograma.Controller;
 
+import com.portfolioweb.argentinaprograma.Dto.DtoPersona;
 import com.portfolioweb.argentinaprograma.Entity.Persona;
-import com.portfolioweb.argentinaprograma.Interface.InterfacePersonaService;
+import com.portfolioweb.argentinaprograma.Security.Controller.Mensaje;
+import com.portfolioweb.argentinaprograma.Service.ImpPersonaService;
 import java.util.List;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -22,50 +23,57 @@ import org.springframework.web.bind.annotation.RestController;
 public class PersonaController {
 
     @Autowired
-    InterfacePersonaService interfacepersonaService;
+    ImpPersonaService impPersonaService;
 
-    @GetMapping("/traer")
-    public List<Persona> getPersona() {
-        return interfacepersonaService.getPersona();
-
+    
+     
+    @GetMapping("/lista")
+    public ResponseEntity<List<Persona>> list() {
+        List<Persona> list = impPersonaService.list();
+        return new ResponseEntity(list, HttpStatus.OK);
     }
 
-    //@PreAuthorize("hasRole:('ADMIN')")
-    @PostMapping("/crear")
-    public String createPersona(@RequestBody Persona persona) {
-        interfacepersonaService.savePersona(persona);
-        return "La persona fue cargada correctamente";
+    @GetMapping("/detail/{id}")
+    public ResponseEntity<Persona> getById(@PathVariable("id")int id){
+        if(!impPersonaService.existsById(id)){
+         return new ResponseEntity(new Mensaje("ID inexistente"),HttpStatus.NOT_FOUND);    
+        }
+        
+       Persona persona = impPersonaService.getOne(id).get();
+        return new ResponseEntity(persona, HttpStatus.OK);
+            
+            
+     }   
 
-    }
 
-    //@PreAuthorize("hasRole:('ADMIN')")
-    @DeleteMapping("/borrar/{id}")
-    public String deletePersona(@PathVariable Long id) {
-        interfacepersonaService.deletePersona(id);
-        return "La persona fue borrada correctamente";
 
-    }
+    @PutMapping("/update/{id}")
+    public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody DtoPersona dtoPersona) {
+        if (!impPersonaService.existsById(id)) {
+            return new ResponseEntity(new Mensaje("ID inexistente"), HttpStatus.NOT_FOUND);
+        }
 
-    //@PreAuthorize("hasRole:('ADMIN')")
-    @PutMapping("/editar/{id}")
-    public Persona editPersona(@PathVariable Long id,
-            @RequestParam("nombre") String nuevoNombre,
-            @RequestParam("apellido") String nuevoApellido,
-            @RequestParam("img") String nuevoImg) {
+        if (impPersonaService.existsByNombre(dtoPersona.getNombre()) && impPersonaService.getByNombre(dtoPersona.getNombre()).get().
+                getId() != id) {
+            return new ResponseEntity(new Mensaje("Usuario existente"), HttpStatus.BAD_REQUEST);
+        }
 
-        Persona persona = interfacepersonaService.findPersona(id);
+        if (StringUtils.isBlank(dtoPersona.getNombre())) {
+            return new ResponseEntity(new Mensaje("El campo no puede estar vacío"), HttpStatus.BAD_REQUEST);
+        }
 
-        persona.setNombre(nuevoNombre);
-        persona.setApellido(nuevoApellido);
-        persona.setImg(nuevoImg);
+        Persona persona =impPersonaService.getOne(id).get();
+        persona.setNombre(dtoPersona.getNombre());
+        persona.setApellido(dtoPersona.getApellido());
+        persona.setDescripcion(dtoPersona.getDescripcion());
+        persona.setImg(dtoPersona.getImg());
 
-        interfacepersonaService.savePersona(persona);
-        return persona;
+        impPersonaService.save(persona);
+        return new ResponseEntity(new Mensaje("Usuario actualizado correctamente"), HttpStatus.OK);
+
     }
     
-    @GetMapping("traer/perfil")
-    public Persona findPersona(){
-        return interfacepersonaService.findPersona((long)1);
-    }
+    
+  
 
 }

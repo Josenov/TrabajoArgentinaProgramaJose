@@ -20,6 +20,16 @@ import { LoginComponent } from './login/login.component';
 import { interceptorProvider } from './service/interceptorService';
 import { NuevaExperienciaComponent } from './experiencia-laboral/nueva-experiencia/nueva-experiencia.component';
 import { EditarExperienciaLaboralComponent } from './experiencia-laboral/editar-experiencia-laboral/editar-experiencia-laboral.component';
+import { NuevaFormacionComponent } from './formacion-academica/nueva-formacion/nueva-formacion.component';
+import { EditarFormacionAcademicaComponent } from './formacion-academica/editar-formacion-academica/editar-formacion-academica.component';
+import { EditarSkillsComponent } from './skills/editar-skills/editar-skills.component';
+import { NuevoSkillComponent } from './skills/nuevo-skill/nuevo-skill.component';
+import { EditarAcercaDeComponent } from './acerca-de/editar-acerca-de/editar-acerca-de.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
+import { EditarproyectoComponent } from './proyectos/editarproyecto/editarproyecto.component';
+import { NuevoproyectoComponent } from './proyectos/nuevoproyecto/nuevoproyecto.component';
 
 
 @NgModule({
@@ -39,13 +49,22 @@ import { EditarExperienciaLaboralComponent } from './experiencia-laboral/editar-
     LoginComponent,
     NuevaExperienciaComponent,
     EditarExperienciaLaboralComponent,
+    NuevaFormacionComponent,
+    EditarFormacionAcademicaComponent,
+    EditarSkillsComponent,
+    NuevoSkillComponent,
+    EditarAcercaDeComponent,
+    EditarproyectoComponent,
+    NuevoproyectoComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgCircleProgressModule.forRoot({}),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage())
   ],
   providers:[
     interceptorProvider

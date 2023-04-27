@@ -7,7 +7,7 @@ import { ExperienciaLaboral } from '../model/experiencia-laboral';
   providedIn: 'root'
 })
 export class ServiceExperienciaLaboralService {
-  expURL="http://localhost:8080/explab/"
+  expURL="https://portfoliobackend-8ce5.onrender.com/explab/"
 
   constructor(private httpClient:HttpClient) { }
 

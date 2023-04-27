@@ -10,7 +10,7 @@ import { FormacionAcademica } from '../model/formacion-academica';
 
 export class FormacionAcademicaService {
 
-  formURL = "http://localhost:8080/formacionacademica/"
+  formURL = "https://portfoliobackend-8ce5.onrender.com/formacionacademica/"
 
   constructor(private httpClient: HttpClient) { }
 

@@ -12,7 +12,10 @@ export const environment = {
     authDomain: 'portfolio-argentina-prog-611d4.firebaseapp.com',
     messagingSenderId: '462148255063',
   },
-  production: false
+  production: false,
+
+  URL : 'http://localhost:8080/',
+  
 };
 
 /*

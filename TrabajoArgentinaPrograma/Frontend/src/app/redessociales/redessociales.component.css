@@ -1,18 +1,23 @@
 img{
-    width: 60px;
+    width: 51px;
+    margin-top: 10px;
     
     
     
 }
 
 a{
-    margin: -7px;
+    margin: -6px;
 }
 
 button{
- 
     font-weight: bolder;
-    padding: 3px 3px;
+    
+    
 
 }
 
+div{
+    display: flex;
+    
+}

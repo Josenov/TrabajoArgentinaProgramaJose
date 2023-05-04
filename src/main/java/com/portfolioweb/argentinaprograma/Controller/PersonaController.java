@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/personas")
-@CrossOrigin(origins = "https://portfoliofrontend-be4c7.web.app")
+@CrossOrigin(origins = {"https://portfoliobackend-8ce5.onrender.com","http://localhost:4200"})
 public class PersonaController {
 
     @Autowired
@@ -44,6 +45,14 @@ public class PersonaController {
             
             
      }   
+    
+    
+    @PostMapping("/personas/crear")
+    public String createPersona(@RequestBody Persona persona){
+     impPersonaService.save(persona);
+     return "El usuario fue creado correctamente";
+
+    }
 
 
 

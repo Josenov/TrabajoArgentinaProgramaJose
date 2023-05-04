@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Proyectos } from '../model/proyectos';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -9,7 +10,7 @@ import { Proyectos } from '../model/proyectos';
     providedIn: 'root'
 })
 export class ProyectosService {
-    URL = "https://portfoliobackend-8ce5.onrender.com/proyectos/"
+    URL = environment.URL + "proyectos/"
 
     constructor(private httpClient: HttpClient) { }
 

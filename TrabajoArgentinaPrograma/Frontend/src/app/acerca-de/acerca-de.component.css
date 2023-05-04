@@ -1,37 +1,39 @@
-.row{
+.row {
     padding: 50px;
 }
 
 
-img{
+img {
     width: 22%;
     height: auto;
-    
+
 }
-.nombre{
+
+.nombre {
     font-weight: bolder;
     margin-left: -130px;
-    
+
 }
 
 
-#acercademi{
+#acercademi {
     width: 100px;
     height: 100px;
     margin-right: 700px;
 }
 
-#button-1{
-    margin-left: 600px;
-    margin-top:  -50px;
+#button-1 {
+    display: flex;
+    margin-top: -50px;
 }
-span{
+
+span {
     margin-left: -300px;
 }
 
 
-@media (min-width:650px){
-    #acercademi{
+@media (min-width:650px) {
+    #acercademi {
         font-size: 44px;
         font-weight: bolder;
         color: #00C884;
@@ -39,48 +41,63 @@ span{
         margin-left: 45px;
         text-align: center;
     }
-    .nombre{
+
+    .nombre {
         font-weight: bolder;
         margin-left: -350px;
-        
+
         text-align: center;
-        
+
     }
-    .titulo-dev{
+
+    .titulo-dev {
         margin-left: -150px;
-        
+
     }
-    
+
+    #button-1 {
+        display: flex;
+        margin-top: -50px;
+        margin-left: 80px;
+    }
+
 
 }
 
-@media (max-width:650px){
-    #acercademi{
+@media (max-width:650px) {
+    #acercademi {
         font-size: 24px;
         font-weight: bolder;
         color: #00C884;
         margin-top: 30px;
-        margin-left: 130px;
+        margin-left: 100px;
         text-align: center;
     }
 
-    .nombre{
+    .nombre {
         font-weight: bolder;
-        margin-left: 60px;
+        margin-left: 10px;
         margin-top: 20px;
         text-align: center;
-        
-    }
-    .titulo-dev{
-        margin-left: 135px;
-        margin-top: 20px;
-        
+
     }
 
-    span{
-        margin-left:20px;
+    .titulo-dev {
+        margin-left: 120px;
+        margin-top: 20px;
+
     }
-    
+
+    span {
+        margin-left: 20px;
+    }
+
+    #button-1 {
+        display: flex;
+        margin-top: -50px;
+        margin-left: 100px;
+    }
+
 
 }
 
@@ -92,34 +109,35 @@ span{
 
 
 
-@media (min-width:650px){
-    #foto-perfil{
+@media (min-width:650px) {
+    #foto-perfil {
         position: absolute;
         width: 20%;
         border-radius: 100%;
         margin-top: -300px;
     }
 
-    #nombreytitulo{
+    #nombreytitulo {
         margin-top: 20px;
         margin-left: -170px;
         text-align: center;
-        
-        
+
+
     }
 
-    .titulo-dev{
-        margin-top:-15px;
+    .titulo-dev {
+        margin-top: -15px;
     }
 
-    #descripcion{
+    #descripcion {
         margin-top: -10px;
         margin-left: 90px;
         text-align: center;
-      
+
 
     }
-    #acercademi{
+
+    #acercademi {
         font-size: 44px;
         font-weight: bolder;
         color: #00C884;
@@ -127,43 +145,42 @@ span{
 
     }
 
-    
+
 }
 
-@media (max-width:650px){
-    #foto-perfil{
+@media (max-width:650px) {
+    #foto-perfil {
         position: absolute;
         width: 30%;
         border-radius: 100%;
         margin-top: -100px;
         margin-left: 150px;
-        
+
     }
 
-    #nombreytitulo{
+    #nombreytitulo {
         margin-top: 60px;
         margin-left: 35px;
         text-align: center;
     }
 
-    .titulo-dev{
-        margin-top:-15px;
+    .titulo-dev {
+        margin-top: -15px;
     }
 
 
-    #descripcion{
+    #descripcion {
         margin-left: 35px;
-        text-align:center
-
+        text-align: center
     }
 
-    #acercademi{
+    #acercademi {
         font-size: 24px;
         font-weight: bolder;
         color: #00C884;
-        
+
 
     }
 
-    
+
 }

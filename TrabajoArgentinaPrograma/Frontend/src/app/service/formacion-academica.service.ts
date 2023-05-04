@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { FormacionAcademica } from '../model/formacion-academica';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ import { FormacionAcademica } from '../model/formacion-academica';
 
 export class FormacionAcademicaService {
 
-  formURL = "https://portfoliobackend-8ce5.onrender.com/formacionacademica/"
+  formURL = environment.URL + "formacionacademica/"
 
   constructor(private httpClient: HttpClient) { }
 

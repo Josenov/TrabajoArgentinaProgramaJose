@@ -8,5 +8,6 @@ export const environment = {
     authDomain: 'portfolio-argentina-prog-611d4.firebaseapp.com',
     messagingSenderId: '462148255063',
   },
-  production: true
+  production: true,
+  URL: 'https://portfoliobackend-8ce5.onrender.com/'
 };

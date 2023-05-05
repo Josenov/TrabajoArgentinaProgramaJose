@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class SkillsService {
 
-  skillURL = environment.URL + "skills/"
+  skillURL = "https://portfoliobackend-8ce5.onrender.com/skills/"
 
   constructor(private httpClient: HttpClient) { }
 

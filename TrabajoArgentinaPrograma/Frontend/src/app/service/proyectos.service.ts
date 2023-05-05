@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
     providedIn: 'root'
 })
 export class ProyectosService {
-    URL = environment.URL + "proyectos/"
+    URL = "https://portfoliobackend-8ce5.onrender.com/proyectos/"
 
     constructor(private httpClient: HttpClient) { }
 

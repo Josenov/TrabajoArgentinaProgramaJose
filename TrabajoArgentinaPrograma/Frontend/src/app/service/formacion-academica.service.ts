@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment';
 
 export class FormacionAcademicaService {
 
-  formURL = environment.URL + "formacionacademica/"
+  formURL ="https://portfoliobackend-8ce5.onrender.com/formacionacademica/"
 
   constructor(private httpClient: HttpClient) { }
 

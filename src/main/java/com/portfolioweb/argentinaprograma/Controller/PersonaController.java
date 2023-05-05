@@ -47,7 +47,7 @@ public class PersonaController {
      }   
     
     
-    @PostMapping("/personas/crear")
+    @PostMapping("/crear")
     public String createPersona(@RequestBody Persona persona){
      impPersonaService.save(persona);
      return "El usuario fue creado correctamente";

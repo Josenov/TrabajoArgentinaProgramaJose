@@ -17,6 +17,7 @@ public class ImpPersonaService{
     @Autowired 
     InterfacePersonaRepository interfacepersonaRepository;
     
+    
     public List <Persona> list(){
         return interfacepersonaRepository.findAll();
         
